@@ -11,14 +11,14 @@ import {
 describe('create-nx-workspace --preset=npm', () => {
   let wsName;
 
-  beforeEach(() => {
+  beforeAll(() => {
     wsName = uniq('npm');
     runCreateWorkspace(wsName, {
       preset: 'npm',
     });
   });
 
-  afterEach(() => cleanupProject());
+  afterAll(() => cleanupProject());
 
   it('should add angular application', () => {
     packageInstall('@nrwl/angular', wsName);
